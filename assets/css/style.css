@@ -67,6 +67,14 @@ h6 {
   opacity: 1;
 }
 
+
+.videGameplayContainer {
+  height: auto;
+  width: 100%;
+}
+
+
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
@@ -275,7 +283,7 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/LoreNomiconGif.gif") top right no-repeat;
+  background: url("../img/LoreNomiconGif.gif");
   background-size: cover;
   position: relative;
 }
@@ -337,6 +345,7 @@ h6 {
 @media (max-width: 992px) {
   #hero {
     text-align: center;
+    background: none;
   }
 
   #hero h1 {
