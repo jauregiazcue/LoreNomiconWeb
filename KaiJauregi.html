@@ -71,18 +71,25 @@
 
           <br>
           <h2>Inventory & Objects</h2>
-
+          <p>The inventory can store up to four items, but just by changing an integer it would be able to store more or less if that is what we wanted. The objects in the inventory can be a book, a flashlight and a meat.</p>
           <br>
+          <p> By pressing X the book will open and will let you see the pages that you have collected (starting with only one).  It can also be a flashlight, that has x batteries that will be taken out if the flashlight stays active in the enemies turns and can also stunt the golem. And we also have the meat, that can be thrown three tiles away, that will make the curse hunter go into the meat instead of hunting the player.</p>
+          <br>
+          
+          
 
           <h2>Interface</h2>
-
+          <p>The interface in the game are gameobjects that are attached to the camera. We have the players and enemies turns, the inventory, the flashlight battery, the win, lose and pause states, with their texts and also with the controls and credits (in the case of the pause stay).</p>
+          <br>
+          <p>The object that is in the hand of the player is also an interface object, but it does not use the same shader.</p>
+          <br>
           <br>
           <h2>Player</h2>
-          <p></p>
+          <p>The player has three movements per turn, the movement only counts when it moves to a different tile, so the player can rotate all they want. The player can also interact with pressure plates, levers and pillars, one of them stepping in it, the other pressing the circle. They can also use the inventory objects, and go to the pause menu. The player's mission in the game is to collect pages that will inform them about how to fight the enemies, and go to the end level tile to go to the next level.</p>
 
           <br>
           <h2>Enemies</h2>
-        
+          <p>The enemies hunt the player or scape from it using the A* algorithm. We have four different enemies, the mushling, that will scape to a set position in the level when it sees the player and when he reaches to that point it will stop moving, the golem and the angel that will try hunting the player but one of them can be stop while you look at him and the other is the same but you also need to have the flashlight active, and the last enemy is the curse hunter, that will hunt the player but if there is any meat in the level it will go towards that instead of the player. They can also move randomly, or not move at all, this is always until they see the player, in which case they will hunt or escape.</p>
           <br>
           <h2>Grid & Tiles</h2>
           <p>The grid is generated using a json file that has all the information of the levels. It first creates all the different tiles of the level. After that it generates the player and all enemies, and with that it is capable to create all the interface (it is done this way to do the turns of these entities). Finally, it adds an extra wall on top of the wall types tiles, it rotates the doors and levers to make them be rotated correctly for the level taking in consideration the walls that surrounds those tiles, and it colour coded the doors with the levers and pressure plate that will change the doors states in the future.
@@ -94,7 +101,7 @@
           <br>
           <p><span style="color:#b48b5f">Open Door Tile · </span> The Open Door tile can be changed by other tiles into a closed door, apart from that it acts like a floor tile with a different obj and textures.</p>
           <br>
-          <p><span style="color:#b48b5f">Preassure Tile · </span> Is the pressure plate tile, if an entity goes into this tile, it will update the tiles that this tile has inside (different kinds of doors or movable tiles).</p>
+          <p><span style="color:#b48b5f">Pressure Tile · </span> Is the pressure plate tile, if an entity goes into this tile, it will update the tiles that this tile has inside (different kinds of doors or movable tiles).</p>
           <br>
           <p><span style="color:#b48b5f">End Level Tile · </span> The end level tile is a tile with an open door obj and texture, so that whenever the player enters on it the level will be finished and it will go to the Win State. The enemies are not able to walk into this tile due to them also being able to make the level be finished.</p>
           <br>
