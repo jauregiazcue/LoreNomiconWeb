@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Ryan Lim</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title-people">
+          <h1>Ryan Lim</h1>
+          <h2>Lighting and Sound Programmer</h2>
+          <div class="address">
+            <p>Email : jxryan3683@gmail.com</p>
+            <p>Linkedin : <a href="https://www.linkedin.com/in/jing-xiang-lim-260b42251/" target="_blank">https://www.linkedin.com/in/jing-xiang-lim-260b42251/</a></p>
+            <p>Portfolio : <a href="https://drakzone.github.io/" target="_blank">https://drakzone.github.io/ </a></p>
+          </div>
+          <br>
+
+          
+          <br>
+          <h2>Texturing</h2>
+
+          <p>In this project I am in charge of the lighting and texturing of this game, that means the mood and the overall looks of this game. My team and I had decided to go for a cartoon look with hard lines and flat colors therefore lighting is most important to bring out the most from what the artist will provide me. Since this project this engine uses tinyOBJ to insert models that means it does not provide information other than vertices, normal and UV. Due to this problem the artist will not be able to provide me with the TBN (tangent, bitangent and normal) calculation for the normal map for the texture and thus I take it upon myself to insert the calculation needed to calculate the TBN using the vertices, normal and UV in the Resource Manager (tangent) and the primitive shader (bitangent), and everything will be place together into a 3X3 matrix in the pixel shader. With this I can easily place the normal textures onto the object. 
+          </p>  
+            <br>
+
+          <br>
+          <h2>Lighting</h2>
+          <p>For lighting, I mainly work in the primitive shader, pixel shader and the renderer to get everything showing in the mood and atmosphere the designer hoped for. In this game I worked on not only the directional light and spot light, I also worked on the fog effect. In this game since we are going for a dark horror vibe I decided to go for minimum directional lighting with a scaler on the intensity so that it does not look so bright in the game instead of ambient lighting.  </p>
+          <br>
+          <p>The fog amount is first calculated based on the distance between the fragment and the camera position, considering fog start and range parameters. Fog is applied to the total output color based on the calculated fog amount using lerp.
+          </p>
+          <br>
+          <p>For directional lighting I have fixed the direction of the lighting to one place and since there is no sunlight or moving light in this game there wasn’t a need to constantly change the direction of the light. Though in the future when more light is introduced into this game it can be easily changed as directional light is easily modifiable. In this game, diffuse lighting is calculated using Lambert’s cosine law, where the diffuse color is multiplied by the dot product between the light direction and the surface normal. As for the specular lighting, it is calculated using the Blinn-Phong reflection model. Both of these will output to show what you see on screen.
+          </p>
+          <br>
+          <p>For Spot lighting I used the same concept as directional lighting but instead of fixed direction of the lighting it changes whenever the player turns and I added a calculation to calculate and limit light into a cone shape so it gives a flashlight effect. 
+          </p>
+          <br>
+
+          <h2>Sound System</h2>
+          <p>In the sound system it can simply split into 4 main sections, the audio port, the audio player, the audio library and the audio manager. Everything is placed together to make the audio work. This sound system contains the 3D sound system ( directional audio) and is able to be used in any game as it is part of the engine not the game.</p>
+          <br>
+          <p>Audio Manager is where the control manager is. This is where the system decides which audio file goes with which available player. This is also where everything audio related converged. It is also a place where all audio is recorded. </p>
+          <br>
+          <p>Audio port is a class for the type of audio. It is where the type of audio is created, initialized and tweaked.</p>
+          <br>
+          <p>Audio File is a class for reading and saving all the audio file pointers. It is an archive of all the data and its size that can be called upon when the audio needs to be played.</p>
+          <br>
+          <p>Audio Player is a class that can be created many times to play many different audios. It is a place where all the data will be temporarily stored until either the game ends or the end of the audio that is at which the audio data will be switched to a different state and ready for new audio and its data. There are 4 states at which the player can be in the Not Available state, the Initialised state, the Playing state and the Terminating state.</p>
+          <br>
+          <p>Audio Out 2 is a class that brings the audio port, audio player and audio file classes together. Audio Out 2 stores all the path to audio players, audio files and audio port so when an audio needs to be played all three classes can be called upon to make audio play.</p>
+
+          
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+    
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      
+        &copy; Copyright <strong><span>MyResume</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: [license-url] -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
